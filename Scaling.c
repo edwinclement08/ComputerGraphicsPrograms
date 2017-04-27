@@ -11,7 +11,7 @@
 #include<GL/glu.h>
 #include<GL/gl.h>
 
-float translation[16] = {0};
+float scaling[16] = {0};
 
 
 // the function definition should be of type :  void fn_name(void)
@@ -23,10 +23,10 @@ void display()	{
 											// 3f means 3 floats
 
 	// column major order
-	translation[0] = 2;		//  |
-	translation[5] = 2;		// 	| Identity matrix Part
-	translation[10] = 1;	// 	|
-	translation[15] = 1;	//  /
+	scaling[0] = 2;		//  |
+	scaling[5] = 2;		// 	| Identity matrix Part
+	scaling[10] = 1;	// 	|
+	scaling[15] = 1;	//  /
 
 	glBegin(GL_LINE_STRIP);
 	glVertex2f(100,50);
@@ -35,7 +35,7 @@ void display()	{
 	glVertex2f(100,50);
 	glEnd();
 
-	glMultTransposeMatrixf(translation);
+	glMultTransposeMatrixf(scaling);
 
 	glBegin(GL_LINE_STRIP);
 	glVertex2f(100,50);
@@ -45,7 +45,7 @@ void display()	{
 	glEnd();
 
 
-	glMultTransposeMatrixf(translation);
+	glMultTransposeMatrixf(scaling);
 
 	glBegin(GL_LINE_STRIP);
 	glVertex2f(100,50);
@@ -62,7 +62,7 @@ void display()	{
 int main(int argc, char** argv) {
 	glutInit(&argc, argv);					// <-Pass all the command line parameters to Glut
 	glutInitWindowSize(500, 500);			// Set the window Size
-	glutCreateWindow("Translate");
+	glutCreateWindow("Scaling");
 											// Create a window with the specified title
 
 	// The only *glu* function here in main

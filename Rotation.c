@@ -10,8 +10,9 @@
 #include<GL/glut.h>
 #include<GL/glu.h>
 #include<GL/gl.h>
+#include<math.h>
 
-float translation[16] = {0};
+float rotation[16] = {0};
 
 
 // the function definition should be of type :  void fn_name(void)
@@ -23,14 +24,18 @@ void display()	{
 											// 3f means 3 floats
 
 	// column major order
-	translation[0] = 1;		//  |
-	translation[5] = 1;		// 	| Identity matrix Part
-	translation[10] = 1;	// 	|
-	translation[15] = 1;	//  /
+	rotation[0] = 1;		//  |
+	rotation[5] = 1;		// 	| Identity matrix Part
+	rotation[10] = 1;	// 	|
+	rotation[15] = 1;	//  /
 
-	translation[3] = 150;		// tx
-	translation[7] = 0;		// ty
-	translation[11] = 0;	// tz
+
+	// column major order
+	rotation[0] = cos(3.14/180.0 * 12);		//  |
+	rotation[1] = -sin(3.14/180.0 * 12);		// 	| Identity matrix Part
+	rotation[4] = sin(3.14/180.0 * 12);	// 	|
+	rotation[5] = cos(3.14/180.0 * 12);	//  /
+
 
 	glBegin(GL_LINE_STRIP);
 	glVertex2f(100,50);
@@ -39,7 +44,7 @@ void display()	{
 	glVertex2f(100,50);
 	glEnd();
 
-	glMultTransposeMatrixf(translation);
+	glMultTransposeMatrixf(rotation);
 
 	glBegin(GL_LINE_STRIP);
 	glVertex2f(100,50);
@@ -49,7 +54,7 @@ void display()	{
 	glEnd();
 
 
-	glMultTransposeMatrixf(translation);
+	glMultTransposeMatrixf(rotation);
 
 	glBegin(GL_LINE_STRIP);
 	glVertex2f(100,50);
