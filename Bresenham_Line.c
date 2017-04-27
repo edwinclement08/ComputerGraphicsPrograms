@@ -59,7 +59,7 @@ void display()	{
 	glColor3f(0,0,0);						// set r,g,b to 0,0,0 i.e. black
 											// 3f means 3 floats
 
-	bresenham(50,50, 250, 120);					// draw a line (50,50) -> (250, 200)
+	bresenham(50,50, 250, 420);					// draw a line (50,50) -> (250, 200)
 	glFlush();								// send all the buffer data to screen
 }
 

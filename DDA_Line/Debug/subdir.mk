@@ -2,17 +2,10 @@
 # Automatically-generated file. Do not edit!
 ################################################################################
 
-OBJ_SRCS := 
-ASM_SRCS := 
-C_SRCS := 
-O_SRCS := 
-S_UPPER_SRCS := 
-EXECUTABLES := 
-OBJS := 
-C_DEPS := 
+# Add inputs and outputs from these tool invocations to the build variables 
+O_SRCS += \
+../Debug/Bresenham_Line.o 
 
-# Every subdirectory with source files must be described here
-SUBDIRS := \
-Debug \
-. \
+
+# Each subdirectory must supply rules for building sources it contributes
 
