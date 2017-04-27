@@ -1,6 +1,6 @@
 Implement DDA							[√]
 Bresenham Line Algorithm				[√]
-Mid point Circle						[]
+Mid point Circle						[√]
 Mid point Ellipse						[]	
 Translation								[]
 Scaling									[]
