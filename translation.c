@@ -97,10 +97,7 @@ void display()	{
 	glVertex2f(200,150);
 	glEnd();
 
-
-
 	glFlush();								// send all the buffer data to screen
-
 }
 
 
